@@ -7,9 +7,11 @@ import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 
 const Login = () => {
+    const [error, setError] = useState('')
     const {googleSingIn, githubSignIn,login } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
@@ -26,10 +28,12 @@ const Login = () => {
             const user = result.user
             console.log(user)
             form.reset('')
+           
             toast.success('Successfully Login!');
         })
         .catch(error =>{
             console.error(error)
+            setError(error.message)
         })
     }
     const handleGoogleLogIn = () =>{
@@ -67,8 +71,8 @@ const Login = () => {
                     <Form.Control name='password' type="password" placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3">
-                <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
+                <Form.Text className="text-danger">
+                       {error}
                     </Form.Text>
                 </Form.Group>
                 <Button className='w-100' variant="primary" type="submit">

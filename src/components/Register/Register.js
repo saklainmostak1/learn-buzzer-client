@@ -5,9 +5,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext)
+    const [error, setError] = useState('')
+    const {createUser, upadateUserProfile} = useContext(AuthContext)
     const handleSubmit = event =>{
         event.preventDefault()
         const form = event.target
@@ -21,8 +23,24 @@ const Register = () => {
             const user = result.user
             console.log(user)
             form.reset('')
+            handleUpdateProfile(name, photoURL)
+           
             toast.success('Successfully Login!');
         })
+        .catch(error =>{
+            console.error(error)
+            setError(error.message)
+        })
+    }
+    const handleUpdateProfile = (name, photoURL) =>{
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+
+        
+        upadateUserProfile(profile)
+        .then(() => {} )
         .catch(error =>{
             console.error(error)
         })
@@ -50,8 +68,8 @@ const Register = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
+                    <Form.Text className="text-danger">
+                       {error}
                     </Form.Text>
                 </Form.Group>
                 <Button className='w-100' variant="primary" type="submit">

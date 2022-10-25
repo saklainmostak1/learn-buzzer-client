@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Blog = () => {
@@ -18,11 +17,16 @@ const Blog = () => {
 
 
             <Card className="text-center mb-5 shadow-lg">
-                <Card.Header>Featured</Card.Header>
+                <Card.Header> <h2>Why are you using firebase??? What other options do you have to implement authentication?</h2> </Card.Header>
                 <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
+                    <Card.Title> Using firebase: </Card.Title>
                     <Card.Text>
-                        With supporting text below as a natural lead-in to additional content.
+                    Firebase helps you develop high-quality apps, grow your user base, and earn more money. Each feature works independently, and they work even better together.
+                    Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more.
+                    </Card.Text>
+                    <Card.Title> Other options like firebase i have to implement authentication: </Card.Title>
+                    <Card.Text>
+                    MongoDB. MongoDB stores data in JSON-like documents that can vary in structure, Passport , Okta,  PingIdentity, Frontegg etc
                     </Card.Text>
                 </Card.Body>
             </Card>

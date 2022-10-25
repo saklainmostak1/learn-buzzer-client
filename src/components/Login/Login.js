@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
 import { Container } from 'react-bootstrap';
@@ -6,20 +6,34 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-
+import toast from 'react-hot-toast';
 
 
 const Login = () => {
-    const {googleSingIn} = useContext(AuthContext)
+    const {googleSingIn, githubSignIn} = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
 
     const handleGoogleLogIn = () =>{
         return googleSingIn(googleProvider)
         .then(result =>{
             const user = result.user
             console.log(user)
+            toast.success('Successfully Login!');
         })
         .catch(error =>{
+            console.error(error)
+        })
+    }
+    const handleGithubLogin = () =>{
+        return githubSignIn(githubProvider)
+        .then(result => {
+            const user = result.user
+            console.log(user)
+            toast.success('Successfully Login!');
+
+        })
+        .catch(error => {
             console.error(error)
         })
     }
@@ -45,7 +59,7 @@ const Login = () => {
                 <br />
                 <Button className='mt-2 w-100' onClick={handleGoogleLogIn} variant="outline-info"><FaGoogle></FaGoogle>  Google Login</Button>
                 <br />
-                <Button className='mt-2 w-100' variant="outline-dark"><FaGithub></FaGithub>  Github Login </Button>
+                <Button onClick={handleGithubLogin} className='mt-2 w-100' variant="outline-dark"><FaGithub></FaGithub>  Github Login </Button>
             </Form>
         </Container>
     );

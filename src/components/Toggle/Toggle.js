@@ -1,9 +1,12 @@
 import React from 'react';
+import './Toggle.css'
+
 
 const Toggle = () => {
+   
     return (
         <div>
-            <h2>Toggle</h2>
+           
         </div>
     );
 };

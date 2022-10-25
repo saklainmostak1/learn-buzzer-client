@@ -8,6 +8,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -73,6 +74,11 @@ const Login = () => {
                 <Form.Group className="mb-3">
                 <Form.Text className="text-danger">
                        {error}
+                    </Form.Text>
+                    <br />
+                <Form.Text className="text-dark">
+                       If you don't have any account please
+                       <Link to='/register'> Register</Link>
                     </Form.Text>
                 </Form.Group>
                 <Button className='w-100' variant="primary" type="submit">

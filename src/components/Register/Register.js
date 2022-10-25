@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const [error, setError] = useState('')
@@ -68,6 +69,11 @@ const Register = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Form.Group className="mb-3">
+                <Form.Text className="text-dark">
+                       If you already have an account please
+                       <Link to='/login'> Login</Link>
+                    </Form.Text>
+                    <br />
                     <Form.Text className="text-danger">
                        {error}
                     </Form.Text>

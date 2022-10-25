@@ -41,6 +41,10 @@ export const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
+            {
+                path: '*',
+                element: <div>Not Found 404!!!</div>
+            },
 
         ]
     }

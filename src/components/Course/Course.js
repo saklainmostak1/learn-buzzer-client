@@ -8,10 +8,10 @@ const Course = () => {
     return (
         <Container>
             <Row>
-                <Col>
+                <Col lg='5'>
                     <LeftSideNav></LeftSideNav>
                 </Col>
-                <Col>
+                <Col lg='7'>
                     <RightSideNav></RightSideNav>
                 </Col>
             </Row>

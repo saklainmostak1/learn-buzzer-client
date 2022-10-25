@@ -10,10 +10,28 @@ import toast from 'react-hot-toast';
 
 
 const Login = () => {
-    const {googleSingIn, githubSignIn} = useContext(AuthContext)
+    const {googleSingIn, githubSignIn,login } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
 
+
+    const handleSubmit = event =>{
+        event.preventDefault()
+        const form = event.target
+        const email = form.email.value
+        const password = form.password.value
+        console.log( email, password)
+        login(email, password)
+        .then(result => {
+            const user = result.user
+            console.log(user)
+            form.reset('')
+            toast.success('Successfully Login!');
+        })
+        .catch(error =>{
+            console.error(error)
+        })
+    }
     const handleGoogleLogIn = () =>{
         return googleSingIn(googleProvider)
         .then(result =>{
@@ -39,14 +57,14 @@ const Login = () => {
     }
     return (
         <Container className='w-50 m-auto'>
-            <Form >
+            <Form onSubmit={handleSubmit} >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control name='email' type="email" placeholder="Enter email" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control name='password' type="password" placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3">
                 <Form.Text className="text-muted">

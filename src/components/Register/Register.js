@@ -1,12 +1,35 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext)
+    const handleSubmit = event =>{
+        event.preventDefault()
+        const form = event.target
+        const name = form.name.value
+        const photoURL = form.photoURL.value
+        const email = form.email.value
+        const password = form.password.value
+        console.log(name, photoURL, email, password)
+        createUser(email, password)
+        .then(result => {
+            const user = result.user
+            console.log(user)
+            form.reset('')
+            toast.success('Successfully Login!');
+        })
+        .catch(error =>{
+            console.error(error)
+        })
+    }
     return (
         <Container className='w-50 m-auto'>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Your Name" />

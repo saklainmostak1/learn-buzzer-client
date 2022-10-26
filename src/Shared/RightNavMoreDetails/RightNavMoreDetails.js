@@ -1,8 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container } from 'react-bootstrap';
+import { FaCrown } from 'react-icons/fa';
+
 
 const RightNavMoreDetails = () => {
     const moreDetails = useLoaderData()
@@ -16,7 +18,10 @@ const RightNavMoreDetails = () => {
                     <Card.Text>
                         {discription}
                     </Card.Text>
-                    <Button className='w-100' variant="primary">Go to Premium</Button>
+                   <Link to='/premium'>
+                        <Button className='w-100' variant="primary">  <FaCrown></FaCrown> Go to Premium</Button>
+                        </Link>
+                  
                 </Card.Body>
             </Card>
         </Container>

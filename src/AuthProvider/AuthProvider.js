@@ -8,24 +8,29 @@ import { useEffect } from 'react';
 export const AuthContext = createContext()
 
 const auth = getAuth(app)
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
+    const [loading, setLoading] = useState(true)
 
-    const [user, setUser ]= useState(null)
+    const [user, setUser] = useState(null)
 
-    const googleSingIn = (provider) =>{
+    const googleSingIn = (provider) => {
+        setLoading(true)
         return signInWithPopup(auth, provider)
     }
-    const githubSignIn = (provider) =>{
+    const githubSignIn = (provider) => {
+        setLoading(true)
         return signInWithPopup(auth, provider)
     }
 
-    const createUser = (email, password) =>{
+    const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
-    const login =(email, password) =>{
+    const login = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
-    const upadateUserProfile = (profile) =>{
+    const upadateUserProfile = (profile) => {
         return updateProfile(auth.currentUser, profile)
     }
 
@@ -34,18 +39,22 @@ const AuthProvider = ({children}) => {
 
 
 
-    const logOut = () =>{
+    const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
 
-    useEffect(() =>{
-   const unsubscribe =  onAuthStateChanged(auth, currentUser =>{
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
-         })
-         return () => unsubscribe()
+            setLoading(false)
+        })
+        return () => unsubscribe()
     }, [])
-    const authInfo = {user, googleSingIn,  logOut, githubSignIn, createUser, login, upadateUserProfile}
+
+
+    const authInfo = { user, googleSingIn, logOut, githubSignIn, createUser, login, upadateUserProfile, loading }
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

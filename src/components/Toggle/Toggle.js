@@ -4,10 +4,11 @@ import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 
 const Toggle = () => {
-   
+    
     return (
         <div>
-           <BootstrapSwitchButton checked={true} onstyle="outline-danger" offstyle="outline-warning"/>
+           <BootstrapSwitchButton checked={true} onstyle="outline-dark" offstyle="outline-light"/>
+           
         </div>
     );
 };

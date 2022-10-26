@@ -1,7 +1,8 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { FaCrown } from 'react-icons/fa';
 
 const MoreDetails = () => {
     const tps = useLoaderData()
@@ -15,7 +16,9 @@ const MoreDetails = () => {
                     <Card.Text>
                        {tps[0].discription}
                     </Card.Text>
-                    <Button className='w-100' variant="primary">Go To premium</Button>
+                    <Link to={`/premium`}>
+                    <Button className='w-100' variant="primary">  <FaCrown></FaCrown> Go To premium</Button>
+                    </Link>
                 </Card.Body>
             </Card>
         </div>

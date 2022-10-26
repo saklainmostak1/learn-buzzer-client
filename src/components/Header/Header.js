@@ -67,7 +67,7 @@ const Header = () => {
         <div className='mb-5'>
             <Navbar className='shadow-lg ps-5 rounded rounded-5 pe-5 ' bg="light" expand="lg">
                 <Container fluid className="d-flex justify-content-between">
-                    <Navbar.Brand> <Link to='/' className='text-decoration-none me-5'><h3 className='mt-4 me-5'> <Image style={{ width: '80px' }} src={logo1}></Image> Learn Buzzer</h3></Link></Navbar.Brand>
+                    <Navbar.Brand> <Link to='/' className='text-decoration-none me-5'><h3 className='mt-4 me-5'> <Image style={{ width: '50px' }} src={logo1}></Image> Learn Buzzer</h3></Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav>

@@ -8,6 +8,7 @@ import Toggle from "../components/Toggle/Toggle";
 import Home from "../Home/Home";
 import Main from "../layout/Main";
 import MoreDetails from "../Shared/MoreDetails/MoreDetails";
+import RightNavMoreDetails from "../Shared/RightNavMoreDetails/RightNavMoreDetails";
 import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 
 
@@ -34,6 +35,11 @@ export const router = createBrowserRouter([
                 path: '/catagory/:id',
                 element: <MoreDetails></MoreDetails> ,
                 loader: ({params}) => fetch(`http://localhost:5000/catagory/${params.id}`)
+            },
+            {
+                path: '/topic/:id',
+                element: <RightNavMoreDetails></RightNavMoreDetails> ,
+                loader: ({params}) => fetch(`http://localhost:5000/topic/${params.id}`)
             },
            
         

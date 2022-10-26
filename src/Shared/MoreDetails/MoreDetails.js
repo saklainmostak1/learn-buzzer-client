@@ -6,10 +6,9 @@ import Card from 'react-bootstrap/Card';
 const MoreDetails = () => {
     const tps = useLoaderData()
     console.log(tps[0].name)
-   
     return (
         <div>
-            <Card style={{ width: '18rem' }}>
+            <Card className='w-100' style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={tps[0].image}/>
                 <Card.Body>
                     <Card.Title>{tps[0].name}</Card.Title>

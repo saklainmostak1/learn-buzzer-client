@@ -5,12 +5,11 @@ import RightSideNavDetails from '../RightSideNavDetails/RightSideNavDetails';
 
 const RightSideNav = () => {
     const catagories = useLoaderData()
-    console.log(catagories)
     return (
         <div className='row'>
              {
                 catagories.map(catagori => <RightSideNavDetails
-                key={catagori.id}
+                key={catagori._id}
                 catagori={catagori}
                 ></RightSideNavDetails> )
             }

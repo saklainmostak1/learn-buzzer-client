@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const RightSideNavDetails = ({ catagori }) => {
     const {_id, name, image, discription } = catagori
     return (
+
         <CardGroup style={{ width: '18rem' }}>
             <Card className='mb-5' style={{ width: '18rem' }} >
                 <Card.Img variant="top" src={image} />
@@ -21,10 +22,12 @@ const RightSideNavDetails = ({ catagori }) => {
                         <p>{discription}</p>  
                     }
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Link to={`/topic/${_id}`}> <Button variant="primary" className='w-100'>More Details</Button></Link>
+                   
                 </Card.Body>
             </Card>
         </CardGroup>
+       
     );
 };
 

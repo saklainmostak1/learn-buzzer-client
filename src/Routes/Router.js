@@ -7,6 +7,9 @@ import Register from "../components/Register/Register";
 import Toggle from "../components/Toggle/Toggle";
 import Home from "../Home/Home";
 import Main from "../layout/Main";
+import MoreDetails from "../Shared/MoreDetails/MoreDetails";
+import RightSideNav from "../Shared/RightSideNav/RightSideNav";
+
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +23,20 @@ export const router = createBrowserRouter([
             {
                 path: '/course',
                 element: <Course></Course>,
+                loader: () => fetch('http://localhost:5000/topic')
             },
+            {
+                path: '/course',
+                element: <RightSideNav></RightSideNav> ,
+                loader: () => fetch('http://localhost:5000/topic')
+            },
+            {
+                path: '/catagory/:id',
+                element: <MoreDetails></MoreDetails> ,
+                loader: ({params}) => fetch(`http://localhost:5000/catagory/${params.id}`)
+            },
+           
+        
             {
                 path: '/faq',
                 element: <Faq></Faq>

@@ -1,17 +1,11 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import RightSideNavDetails from '../RightSideNavDetails/RightSideNavDetails';
 
 
 const RightSideNav = () => {
-    const [catagories, setCatagories] = useState([])
-
-    useEffect(() =>{
-        fetch('http://localhost:5000/topic-catagory')
-        .then(Response => Response.json())
-        .then(data => setCatagories(data))
-    })
+    const catagories = useLoaderData()
+    console.log(catagories)
     return (
         <div className='row'>
              {

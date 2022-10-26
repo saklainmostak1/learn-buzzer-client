@@ -1,18 +1,18 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const PremiumAccess = () => {
     const premium = useLoaderData()
-    console.log(premium.length)
+    console.log(premium)
     return (
         <div>
             <h2>Premium access</h2>
                         {
-                premium.map(pre => <p
+                Object.entries.premium.map(pre => <Link to='/premium'
                 key={pre.id}
                 pre={pre}
                 >      
-                pre</p>)
+                pre</Link>)
             }
         </div>
     );

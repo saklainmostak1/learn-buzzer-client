@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './LeftSideNav.css'
 
 const LeftSideNav = () => {
     const [catagories, setCatagories] = useState([])
@@ -15,9 +17,9 @@ const LeftSideNav = () => {
         <div>
             <h2>Catagory: {catagories.length}</h2>
             {
-                catagories.map(catagori =>  <Button className='d-block mb-4 rounded' 
-                key={catagori.id}
-                variant="outline-primary">{catagori.name}</Button>)
+                catagories.map(catagory =><Link to=''  className='btn-class'>  <Button className='d-block  mb-4 rounded' 
+                key={catagory.id}
+                variant="outline-danger">{catagory.name}</Button></Link>)
             }
         </div>
     );

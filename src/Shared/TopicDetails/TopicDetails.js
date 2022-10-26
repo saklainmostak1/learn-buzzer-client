@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RightNavDetails = () => {
+const TopicDetails = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const RightNavDetails = () => {
     );
 };
 
-export default RightNavDetails;
+export default TopicDetails;

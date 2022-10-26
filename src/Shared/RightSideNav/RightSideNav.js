@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import RightSideNavDetails from '../RightSideNavDetails/RightSideNavDetails';
+
 
 const RightSideNav = () => {
     const [catagories, setCatagories] = useState([])
@@ -12,9 +13,12 @@ const RightSideNav = () => {
         .then(data => setCatagories(data))
     })
     return (
-        <div>
+        <div className='row'>
              {
-                catagories.map(catagori => )
+                catagories.map(catagori => <RightSideNavDetails
+                key={catagori.id}
+                catagori={catagori}
+                ></RightSideNavDetails> )
             }
         </div>
     );

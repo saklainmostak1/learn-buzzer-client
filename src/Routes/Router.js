@@ -4,7 +4,6 @@ import Course from "../components/Course/Course";
 import Faq from "../components/Faq/Faq";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
-import Toggle from "../components/Toggle/Toggle";
 import Home from "../Home/Home";
 import Main from "../layout/Main";
 import MoreDetails from "../Shared/MoreDetails/MoreDetails";
@@ -50,10 +49,6 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
-            },
-            {
-                path: '/toggle',
-                element: <Toggle></Toggle>
             },
             {
                 path: '/login',

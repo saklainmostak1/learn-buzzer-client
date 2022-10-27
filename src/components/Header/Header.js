@@ -72,7 +72,7 @@ const Header = () => {
                     <Navbar.Collapse id="navbarScroll">
                         <Nav>
                             <Nav.Link > <Link className='me-4 text-decoration-none ' to='/'>Home</Link></Nav.Link>
-                            <Nav.Link> <Link className='me-4 text-decoration-none ' to='/course'>Course</Link></Nav.Link>
+                            <Nav.Link> <Link className='me-4 text-decoration-none ' to='/course'>Courses</Link></Nav.Link>
                             <Nav.Link> <Link className='text-decoration-none me-4' to='/faq'>FAQ</Link></Nav.Link>
                             <Nav.Link>  <Link className=' me-4 text-decoration-none ' to='/blog'>Blog</Link></Nav.Link>
                         </Nav>

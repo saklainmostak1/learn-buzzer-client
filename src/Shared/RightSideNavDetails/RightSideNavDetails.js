@@ -23,8 +23,7 @@ const RightSideNavDetails = ({ catagori }) => {
                         <p>{discription}</p>  
                     }
                     </Card.Text>
-                    <Link to={`/topic/${_id}`}> <Button variant="primary" className='w-100'>More Details</Button></Link>
-                   
+                    <Link to={`/topic/${_id}`}> <Button variant="primary" className='w-100'>More Details</Button></Link>                  
                 </Card.Body>
             </Card>
         </CardGroup>

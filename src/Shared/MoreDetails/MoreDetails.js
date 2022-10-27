@@ -7,22 +7,24 @@ import ReactToPdf from '../ReactToPdf/ReactToPdf';
 
 const MoreDetails = () => {
     const tps = useLoaderData()
-   
-    const {total_view, image, name, rating, discription,_id } = tps[0]
+
+    const { total_view, image, name, rating, discription, _id } = tps[0]
     return (
         <div>
             <Card className='w-100' style={{ width: '18rem' }}>
-            <ReactToPdf ></ReactToPdf>
-            <p className='ms-2'>
+
+                <p className='ms-2'>
                     <FaEye className='me-2'></FaEye>
                     {total_view}
-                    </p>
-                <Card.Img variant="top" src={image}/>
+                </p>
+                <Card.Img variant="top" src={image} />
                 <Card.Body>
-                
-                    <Card.Title>{name}</Card.Title>
+                    <div className='d-flex justify-content-between mb-4'>
+                        <Card.Title>{name}</Card.Title>
+                        <ReactToPdf ></ReactToPdf>
+                    </div>
                     <Card.Text>
-                       {discription}
+                        {discription}
                     </Card.Text>
                     <div className='d-flex justify-content-between mb-3'>
                         <div>
@@ -34,7 +36,7 @@ const MoreDetails = () => {
                         </div>
                     </div>
                     <Link to={`/premium/${_id}`}>
-                    <Button className='w-100' variant="primary">  <FaCrown></FaCrown> Go To premium</Button>
+                        <Button className='w-100' variant="primary">  <FaCrown></FaCrown> Get Premium Access</Button>
                     </Link>
                 </Card.Body>
             </Card>

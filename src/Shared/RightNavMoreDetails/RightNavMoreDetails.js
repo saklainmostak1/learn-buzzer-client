@@ -14,14 +14,17 @@ const RightNavMoreDetails = () => {
     return (
         <Container >
             <Card className='w-100' style={{ width: '18rem' }}>
-                <ReactToPdf></ReactToPdf>
+               
                 <p className='ms-2'>
                     <FaEye className='me-2'></FaEye>
                     {total_view}
                     </p>
                 <Card.Img variant="top" className='h-50' src={image} />
                 <Card.Body>
+                    <div className='d-flex justify-content-between mb-4'>
                     <Card.Title>{name}</Card.Title>
+                    <ReactToPdf></ReactToPdf>
+                    </div>
                     <Card.Text>
                         {discription}
                     </Card.Text>
@@ -37,7 +40,7 @@ const RightNavMoreDetails = () => {
                         
                        </div>
                    <Link to={`/premium/${_id}`}>
-                        <Button className='w-100' variant="primary">  <FaCrown></FaCrown> Go to Premium</Button>
+                        <Button className='w-100' variant="primary">  <FaCrown></FaCrown> Get Premium Access</Button>
                         </Link>
                   
                 </Card.Body>

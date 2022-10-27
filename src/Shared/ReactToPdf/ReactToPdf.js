@@ -13,7 +13,7 @@ const ReactToPdf = () => {
     }
     return (
         <div>
-           <Button onClick={pdfGenerate} >Download Pdf</Button>
+           <Button  onClick={pdfGenerate} >Download Pdf</Button>
         </div>
     );
 };

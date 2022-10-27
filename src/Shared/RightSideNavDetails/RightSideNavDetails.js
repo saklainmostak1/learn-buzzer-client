@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 const RightSideNavDetails = ({ catagori }) => {
+    console.log(catagori)
     const {_id, name, image, discription } = catagori
     return (
 
@@ -16,7 +17,7 @@ const RightSideNavDetails = ({ catagori }) => {
                     <Card.Text>
                         {discription.length > 200 ? 
                         <p>{discription.slice(0,250) + '...'}
-                        <Link to={`/topic/${_id}`}>Read More</Link>
+                        <Link to={'/topic'}>Read More</Link>
                         </p>  
                         :
                         <p>{discription}</p>  

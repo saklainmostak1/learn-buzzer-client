@@ -43,9 +43,9 @@ export const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/topic/${params.id}`)
             },        
             {
-                path: '/premium/id',
+                path: '/premium/:id',
                 element: <PrivateRoutes><PremiumAccess></PremiumAccess></PrivateRoutes> ,
-                loader: ({params}) => fetch(`http://localhost:5000/premium/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/topic/${params.id}`)
             },        
             {
                 path: '/faq',

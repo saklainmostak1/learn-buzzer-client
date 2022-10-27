@@ -33,7 +33,6 @@ const Login = () => {
                 form.reset('')
                 setError('')
                 navigate(from, {replace: true})
-
                 toast.success('Successfully Login!');
             })
             .catch(error => {

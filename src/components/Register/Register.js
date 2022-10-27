@@ -26,8 +26,7 @@ const Register = () => {
             setError('')
             form.reset('')
             handleUpdateProfile(name, photoURL)
-           
-            toast.success('Successfully Login!');
+            toast.success('Successfully Register!');
         })
         .catch(error =>{
             console.error(error)

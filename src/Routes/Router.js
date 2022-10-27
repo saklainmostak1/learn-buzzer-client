@@ -25,27 +25,27 @@ export const router = createBrowserRouter([
             {
                 path: '/course',
                 element: <Course></Course>,
-                loader: () => fetch('http://localhost:5000/topic')
+                loader: () => fetch('https://learn-buzzer-server.vercel.app/topic')
             },
             {
                 path: '/course',
                 element: <RightSideNav></RightSideNav> ,
-                loader: () => fetch('http://localhost:5000/topic')
+                loader: () => fetch('https://learn-buzzer-server.vercel.app/topic')
             },
             {
                 path: '/catagory/:id',
                 element: <MoreDetails></MoreDetails> ,
-                loader: ({params}) => fetch(`http://localhost:5000/catagory/${params.id}`)
+                loader: ({params}) => fetch(`https://learn-buzzer-server.vercel.app/catagory/${params.id}`)
             },
             {
                 path: '/topic/:id',
                 element: <RightNavMoreDetails></RightNavMoreDetails> ,
-                loader: ({params}) => fetch(`http://localhost:5000/topic/${params.id}`)
+                loader: ({params}) => fetch(`https://learn-buzzer-server.vercel.app/topic/${params.id}`)
             },        
             {
                 path: '/premium/:id',
                 element: <PrivateRoutes><PremiumAccess></PremiumAccess></PrivateRoutes> ,
-                loader: ({params}) => fetch(`http://localhost:5000/topic/${params.id}`)
+                loader: ({params}) => fetch(`https://learn-buzzer-server.vercel.app/topic/${params.id}`)
             },        
             {
                 path: '/faq',

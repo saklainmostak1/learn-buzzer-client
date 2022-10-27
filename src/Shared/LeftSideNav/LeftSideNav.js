@@ -9,7 +9,7 @@ const LeftSideNav = () => {
     const [catagories, setCatagories] = useState([])
 
     useEffect(() =>{
-        fetch('http://localhost:5000/topic-catagory')
+        fetch('https://learn-buzzer-server.vercel.app/topic-catagory')
         .then(Response => Response.json())
         .then(data => setCatagories(data))
     })

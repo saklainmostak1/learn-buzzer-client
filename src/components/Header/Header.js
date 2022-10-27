@@ -12,6 +12,7 @@ import logo1 from './Buzzer_Logo.jpg'
 import Toggle from '../Toggle/Toggle';
 
 
+
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
 

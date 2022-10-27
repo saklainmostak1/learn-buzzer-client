@@ -5,7 +5,7 @@ const Faq = () => {
     return (
         <div>
          <Card border="primary" className='text-center shadow-lg border border-0' >
-        <Card.Header>Thank You To Visiting My Website</Card.Header>
+        <Card.Header>Thank You For Visiting My Website</Card.Header>
         <Card.Body>
           <Card.Title>WELCOME</Card.Title>
           <Card.Text>

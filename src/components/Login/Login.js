@@ -47,7 +47,7 @@ const Login = () => {
                 const user = result.user
                 console.log(user)
                 toast.success('Successfully Login!');
-                navigate('/')
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 console.error(error)
@@ -59,7 +59,7 @@ const Login = () => {
                 const user = result.user
                 console.log(user)
                 toast.success('Successfully Login!');
-                navigate('/')
+                navigate(from, {replace: true})
 
             })
             .catch(error => {
